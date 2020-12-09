@@ -30,6 +30,7 @@ namespace ConsoleApp1
 
         }
 
+        // getters ----------------------
         public string GetInfoArticle()         // methode pour récuperer les infos de l'article(getter)
         {
             string info = "le reference d'article : " + numRef +"\n"
@@ -56,7 +57,21 @@ namespace ConsoleApp1
             return nom;
         }
 
+        // setters -------------------------------
 
+        public void SetPrixAchat(decimal value)
+        {
+            prixAchat = value;
+        }
+        public void SetPrixVente( decimal value)
+        {
+            prixVente = value;
+        }
+
+        public void SetNom( string value)
+        {
+            nom = value;
+        }
 
 
 

@@ -22,12 +22,17 @@ namespace ConsoleApp1
                 //unStock.AjouterArticle(006, "kkk", 500, 400);
                 Console.WriteLine("----------------------------------");
                 Console.WriteLine("----------------------------------");
-                unStock.ChercheArticle(1);
+                unStock.ChercheArticle(1);                       // chercher l'article dont le reference est 1
                 Console.WriteLine("----------------------------------");
-                unStock.FilterArticle(100);
+                unStock.FilterArticle(100);                      // chercher les article dont le prix d'achat > 100
                 Console.WriteLine("----------------------------------");
-                unStock.DeleteArticle("fff");
-                unStock.AfficherTousArticle();
+                //unStock.DeleteArticle("fff");
+                //Console.WriteLine("----------------------------------");
+
+                Console.WriteLine("----------------------------------");
+                unStock.ModifierArticle(1, "nouveau", 10, 20);       // modifier l'article dont le reference est un par nouveau nom, prixA, prix V
+                unStock.AfficherTousArticle(); 
+
 
 
 

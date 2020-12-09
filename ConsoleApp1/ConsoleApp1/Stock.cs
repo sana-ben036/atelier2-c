@@ -27,7 +27,7 @@ namespace ConsoleApp1
             }
               
         }
-        public void AfficherTousArticle()                     // methode pour parcourir la list et afficher les objets et leurs details
+        public void AfficherTousArticle()                     // parcourir la list et afficher les objets et leurs details
         {
             foreach(Article article in listArticles)
             {
@@ -40,7 +40,7 @@ namespace ConsoleApp1
         public void ChercheArticle(int a)
         {
 
-            foreach (Article article in listArticles)
+            foreach (Article article in listArticles)    // chercher un article par un attribut et afficher ses details
             {
                 if (article.GetNumRef() == a)
                 {
@@ -52,7 +52,7 @@ namespace ConsoleApp1
         }
 
        
-        public void FilterArticle(decimal prix)
+        public void FilterArticle(decimal prix)     // afficher un article dont le prix d'achat est superieur d'un nombre donné
         {
             foreach (Article article in listArticles)
             {
@@ -65,15 +65,31 @@ namespace ConsoleApp1
 
         }
 
-        public void DeleteArticle( string nom)
+        public void DeleteArticle( string nom)      // delete un article d'un nom determiné
         {
             foreach (Article article in listArticles)
             {
                 if (article.GetNom() == nom)
                 {
                     listArticles.Remove(article);
-                    Console.WriteLine("l'article de nom {0} est supprimer",nom);
+                    Console.WriteLine("un article est supprimé");
                 }
+
+            }
+        }
+
+
+        public void ModifierArticle(int r, string n, decimal a, decimal v)
+        {
+            foreach (Article article in listArticles)
+            {
+                if (article.GetNumRef() == r)
+                {
+                    article.SetNom(n) ;
+                    article.SetPrixAchat(a);
+                    article.SetPrixVente(v);
+                }
+                
 
             }
         }
