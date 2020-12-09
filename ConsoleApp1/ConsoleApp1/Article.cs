@@ -17,19 +17,20 @@ namespace ConsoleApp1
         {
             numRef = unNum;
             nom = unNom;
-            prixAchat = prixA;
-            prixVente = prixV;
-
-            if( prixVente < prixAchat)
+          
+            if( prixVente < prixAchat)         // une condition provoquant l'exception lors de l'instanciation
             {
                 throw new Exception  ();
             }
-
-            
+            else 
+            {
+                prixAchat = prixA;
+                prixVente = prixV;
+            }
 
         }
 
-        public string GetInfo()         // methode pour récuperer les infos de l'article(getter)
+        public string GetInfoArticle()         // methode pour récuperer les infos de l'article(getter)
         {
             string info = "le reference d'article : " + numRef +"\n"
                 + "le nom d'article : " + nom +"\n"
@@ -50,6 +51,10 @@ namespace ConsoleApp1
             return numRef;
         }
 
+        public string GetNom()
+        {
+            return nom;
+        }
 
 
 

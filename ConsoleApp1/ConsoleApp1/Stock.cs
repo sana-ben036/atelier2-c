@@ -31,39 +31,53 @@ namespace ConsoleApp1
         {
             foreach(Article article in listArticles)
             {
-                Console.WriteLine(article.GetInfo());
+                Console.WriteLine(article.GetInfoArticle());
 
             }
-        }
-
-        public List<Article> GetListArticles()
-        {
-            return listArticles;
-        }
-        public void ChercheArticle(int a)
-        {
-            bool exist = listArticles.Exists(x => x.GetNumRef() == a);    // si le numRef deja exsist dans la list provoquer Exception
-            if (exist == true)
-            {
-                //Console.WriteLine("l'article recherché est exist : \n"+ listArticles.GetInfo()); 
-            }
-            else
-            {
-                
-            }
-        }
-
-        public void DeleteArticle()
-        {
-            //Collection.Remove()
         }
 
         
-        public void FilterArticle(decimal prix)
+        public void ChercheArticle(int a)
         {
-            // Collection.FindAll(Article.GetPrixAchat() > prix;
-            //Article.GetPrixAchat() > prix;
+
+            foreach (Article article in listArticles)
+            {
+                if (article.GetNumRef() == a)
+                {
+                    Console.WriteLine(article.GetInfoArticle());
+                }
+
+            }
 
         }
+
+       
+        public void FilterArticle(decimal prix)
+        {
+            foreach (Article article in listArticles)
+            {
+                if (article.GetPrixAchat() > prix)
+                {
+                    Console.WriteLine(article.GetInfoArticle());
+                }
+
+            }
+
+        }
+
+        public void DeleteArticle( string nom)
+        {
+            foreach (Article article in listArticles)
+            {
+                if (article.GetNom() == nom)
+                {
+                    listArticles.Remove(article);
+                    Console.WriteLine("l'article de nom {0} est supprimer",nom);
+                }
+
+            }
+        }
+
+
     }
 }
