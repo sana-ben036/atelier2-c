@@ -7,7 +7,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-          
+
             
             try
             {
@@ -20,7 +20,8 @@ namespace ConsoleApp1
                 unStock.AjouterArticle(005, "fff", 500, 600);
                 unStock.AfficherTousArticle();                  // afficher tous les articles de la list avec leurs details
                 //Console.WriteLine(unStock.GetListArticles());
-                
+                //unStock.AjouterArticle(006, "kkk", 500, 400);
+
 
 
 
@@ -30,19 +31,19 @@ namespace ConsoleApp1
 
 
             }
-            catch (Exception)
+            catch (Exception )
             {
                 
-                Console.WriteLine("ERROR: prix de vente est inferieur au prix d'achat"); // le message qui indique un erreur si la condition est true
+                Console.WriteLine("ERROR"); // le message qui indique un erreur si la condition est true
             }
+            
             finally
             {
                 Console.WriteLine("--------------Terminer-----------------");
             }
 
 
-
-
+            
 
 
 

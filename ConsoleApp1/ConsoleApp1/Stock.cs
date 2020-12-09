@@ -14,9 +14,18 @@ namespace ConsoleApp1
             listArticles = new List<Article>(); // declaration d'une list 
 
         }
-        public void AjouterArticle(int unNum, string unNom, decimal prixA, decimal prixV) // methode pour instancier un article 
-        {                                                                                 // et la stocker dans la list
-            listArticles.Add(new Article(unNum, unNom, prixA, prixV));
+        public void AjouterArticle(int a, string b, decimal c, decimal d) // methode pour instancier un article et la stocker dans la list
+        {                                                                                 
+            bool exist = listArticles.Exists(x => x.GetNumRef() == a);    // si le numRef deja exsist dans la list provoquer Exception
+            if (exist == true) 
+            { 
+                throw new Exception(); 
+            }
+            else 
+            {
+                listArticles.Add(new Article(a, b, c, d));
+            }
+              
         }
         public void AfficherTousArticle()                     // methode pour parcourir la list et afficher les objets et leurs details
         {
@@ -31,9 +40,17 @@ namespace ConsoleApp1
         {
             return listArticles;
         }
-        public void ChercheArticle()
+        public void ChercheArticle(int a)
         {
-            
+            bool exist = listArticles.Exists(x => x.GetNumRef() == a);    // si le numRef deja exsist dans la list provoquer Exception
+            if (exist == true)
+            {
+                //Console.WriteLine("l'article recherché est exist : \n"+ listArticles.GetInfo()); 
+            }
+            else
+            {
+                
+            }
         }
 
         public void DeleteArticle()

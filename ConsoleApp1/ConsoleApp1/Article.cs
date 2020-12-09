@@ -22,7 +22,7 @@ namespace ConsoleApp1
 
             if( prixVente < prixAchat)
             {
-                throw new Exception ();
+                throw new Exception  ();
             }
 
             
@@ -44,8 +44,12 @@ namespace ConsoleApp1
         {
             return prixAchat;
         }
-        
-        
+
+        public int GetNumRef()
+        {
+            return numRef;
+        }
+
 
 
 
