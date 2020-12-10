@@ -14,6 +14,8 @@ namespace ConsoleApp1
             listArticles = new List<Article>(); // declaration d'une list 
 
         }
+
+        // Method
         public void AjouterArticle(int a, string b, decimal c, decimal d) // methode pour instancier un article et la stocker dans la list
         {                                                                                 
             bool exist = listArticles.Exists(x => x.GetNumRef() == a);    // si le numRef deja exsist dans la list provoquer Exception
@@ -37,10 +39,10 @@ namespace ConsoleApp1
         }
 
         
-        public void ChercheArticle(int a)
+        public void ChercheArticle(int a)                      // chercher un article par un attribut et afficher ses details
         {
 
-            foreach (Article article in listArticles)    // chercher un article par un attribut et afficher ses details
+            foreach (Article article in listArticles)    
             {
                 if (article.GetNumRef() == a)
                 {
@@ -79,7 +81,7 @@ namespace ConsoleApp1
         }
 
 
-        public void ModifierArticle(int r, string n, decimal a, decimal v)
+        public void ModifierArticle(int r, string n, decimal a, decimal v) // update les info d'un article par le passage de son reference 
         {
             foreach (Article article in listArticles)
             {

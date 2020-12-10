@@ -13,6 +13,7 @@ namespace ConsoleApp1
             {
                
                 Stock unStock = new Stock();                  // instancier objet de la class stock
+                
                 unStock.AjouterArticle(001, "aaa", 100, 200); // instancier et ajouter au list le premier nouveau article
                 unStock.AjouterArticle(002, "bbb", 100, 200);
                 unStock.AjouterArticle(003, "ccc", 100, 300);
