@@ -42,15 +42,23 @@ namespace ConsoleApp1
         public void ChercheArticle(int a)                      // chercher un article par un attribut et afficher ses details
         {
 
-            foreach (Article article in listArticles)    
+           
+            if (listArticles.Count > 0)
             {
-                if (article.GetNumRef() == a)
+                Article article = listArticles.Find(article => article.GetNumRef() == a);
+                if (article != null)
                 {
                     Console.WriteLine(article.GetInfoArticle());
                 }
-
+                else
+                {
+                    Console.WriteLine("l'article recherché est introuvable");
+                }
             }
-
+            else
+            {
+                Console.WriteLine("La list est vide");
+            }
         }
 
        
@@ -62,21 +70,23 @@ namespace ConsoleApp1
                 {
                     Console.WriteLine(article.GetInfoArticle());
                 }
-
+                else
+                {
+                    Console.WriteLine("Aucun resultat trouvé ");
+                }
             }
 
         }
 
-        public void DeleteArticle( string nom)      // delete un article d'un nom determiné
+        public void DeleteArticle(string nom) // delete un article d'un nom determiné
         {
-            foreach (Article article in listArticles)
+            if (listArticles.Count > 0)
             {
-                if (article.GetNom() == nom)
-                {
-                    listArticles.Remove(article);
-                    Console.WriteLine("un article est supprimé");
-                }
-
+                listArticles.RemoveAll(article => article.GetNom() == nom);
+            }
+            else
+            {
+                Console.WriteLine("La list est vide");
             }
         }
 
