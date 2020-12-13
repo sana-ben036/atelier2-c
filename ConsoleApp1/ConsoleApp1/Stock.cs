@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleApp1
 {
-     class Stock
+    class Stock
     {
         // les champs
         private List<Article> listArticles; 
