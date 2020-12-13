@@ -17,16 +17,11 @@ namespace ConsoleApp1
         {
             numRef = unNum;
             nom = unNom;
-          
-            if( prixVente < prixAchat)         // une condition provoquant l'exception lors de l'instanciation
-            {
-                throw new Exception  ();
-            }
-            else 
-            {
-                prixAchat = prixA;
-                prixVente = prixV;
-            }
+            prixAchat = prixA;
+            prixVente = prixV;
+
+            
+            
 
         }
 

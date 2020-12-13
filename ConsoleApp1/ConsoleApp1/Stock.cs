@@ -16,12 +16,17 @@ namespace ConsoleApp1
         }
 
         // Method
+        
         public void AjouterArticle(int a, string b, decimal c, decimal d) // methode pour instancier un article et la stocker dans la list
         {                                                                                 
             bool exist = listArticles.Exists(x => x.GetNumRef() == a);    // si le numRef deja exsist dans la list provoquer Exception
             if (exist == true) 
             { 
-                throw new Exception(); 
+                throw new Exception("L'article déja enregisté"); 
+            }
+            else if (d < c)
+            {
+                throw new Exception("Le prix de vente doit etre superieur au prix d'achat");
             }
             else 
             {
