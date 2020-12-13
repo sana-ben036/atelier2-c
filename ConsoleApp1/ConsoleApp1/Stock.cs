@@ -96,7 +96,7 @@ namespace ConsoleApp1
         }
 
 
-        public void ModifierArticle(int r, string n, decimal a, decimal v) // update les info d'un article par le passage de son reference 
+        public void ModifierArticle(int r, string n, decimal a, decimal v)              // update les info d'un article par le passage de son reference 
         {
             foreach (Article article in listArticles)
             {
@@ -106,8 +106,10 @@ namespace ConsoleApp1
                     article.SetPrixAchat(a);
                     article.SetPrixVente(v);
                 }
-                
-
+                else
+                {
+                    Console.WriteLine("l'article est introuvable");
+                }
             }
         }
 
