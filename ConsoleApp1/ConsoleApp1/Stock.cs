@@ -7,8 +7,8 @@ namespace ConsoleApp1
     class Stock
     {
         // les champs
-        private List<Article> listArticles; 
-
+        private List<Article> listArticles;
+        public Article art;
         public Stock()
         {
             listArticles = new List<Article>(); // declaration d'une list 
@@ -17,22 +17,20 @@ namespace ConsoleApp1
 
         // Method
         
-        public void AjouterArticle(int a, string b, decimal c, decimal d) // methode pour instancier un article et la stocker dans la list
-        {                                                                                 
-            bool exist = listArticles.Exists(x => x.GetNumRef() == a);    // si le numRef deja exsist dans la list provoquer Exception
+        public void AjouterArticle(Article art)                                                            // methode pour instancier un article et la stocker dans la list
+        {
+            bool exist = listArticles.Exists(x => x.GetNumRef() == art.GetNumRef());                         // si le numRef deja exsist dans la list provoquer Exception
             if (exist == true) 
             { 
                 throw new Exception("L'article déja enregisté"); 
             }
-            else if (d < c)
-            {
-                throw new Exception("Le prix de vente doit etre superieur au prix d'achat");
-            }
+           
             else 
             {
-                listArticles.Add(new Article(a, b, c, d));
+                listArticles.Add(art);
             }
-              
+            
+
         }
         public void AfficherTousArticle()                     // parcourir la list et afficher les objets et leurs details
         {
@@ -67,7 +65,7 @@ namespace ConsoleApp1
         }
 
        
-        public void FilterArticle(decimal prix)     // afficher un article dont le prix d'achat est superieur d'un nombre donné
+        public void FilterArticle(decimal prix)                       // afficher un article dont le prix d'achat est superieur d'un nombre donné
         {
             foreach (Article article in listArticles)
             {

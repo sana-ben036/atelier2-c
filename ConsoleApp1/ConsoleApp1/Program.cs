@@ -8,7 +8,6 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
 
-            
             try
             {
                
@@ -29,7 +28,8 @@ namespace ConsoleApp1
                             string b = Console.ReadLine();
                             int c = int.Parse(Console.ReadLine());
                             int d = int.Parse(Console.ReadLine());
-                            unStock.AjouterArticle(a, b, c, d);
+                            Article art = new Article(a, b, c, d);
+                            unStock.AjouterArticle(art);
                             Console.WriteLine("---------------<<  list of articles  >>------------");
                             unStock.AfficherTousArticle();
 

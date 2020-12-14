@@ -20,6 +20,11 @@ namespace ConsoleApp1
             prixAchat = prixA;
             prixVente = prixV;
 
+
+            if (prixV < prixA)
+            {
+                throw new Exception("Le prix de vente doit etre superieur au prix d'achat");
+            }
             
             
 
