@@ -24,11 +24,11 @@ namespace ConsoleApp1
                         if (opt == "Add")
                         {
                             Console.WriteLine("Enter les info d'article : Numero , Nom, Prix d'achat , prix de vente");
-                            int a = int.Parse(Console.ReadLine());
-                            string b = Console.ReadLine();
-                            int c = int.Parse(Console.ReadLine());
-                            int d = int.Parse(Console.ReadLine());
-                            Article art = new Article(a, b, c, d);
+                            //int a = int.Parse(Console.ReadLine());
+                            //string b = Console.ReadLine();
+                            //int c = int.Parse(Console.ReadLine());
+                            //int d = int.Parse(Console.ReadLine());
+                            Article art = new Article(int.Parse(Console.ReadLine()), Console.ReadLine(), int.Parse(Console.ReadLine()), int.Parse(Console.ReadLine()));
                             unStock.AjouterArticle(art);
                             Console.WriteLine("---------------<<  list of articles  >>------------");
                             unStock.AfficherTousArticle();
@@ -37,15 +37,15 @@ namespace ConsoleApp1
                         else if (opt == "Search")
                         {
                             Console.WriteLine("Enter le numero  d'article :");
-                            int a = int.Parse(Console.ReadLine());
-                            unStock.ChercheArticle(a);
+                            //int a = int.Parse(Console.ReadLine());
+                            unStock.ChercheArticle(int.Parse(Console.ReadLine()));
 
                         }
                         else if (opt == "Delete")
                         {
                             Console.WriteLine("Enter le nom de l'article :");
-                            string nom = Console.ReadLine();
-                            unStock.DeleteArticle(nom);
+                            //string nom = Console.ReadLine();
+                            unStock.DeleteArticle(Console.ReadLine());
 
                         }
                         else if (opt == "Update")

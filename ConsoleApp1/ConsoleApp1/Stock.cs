@@ -67,16 +67,22 @@ namespace ConsoleApp1
        
         public void FilterArticle(decimal prix)                       // afficher un article dont le prix d'achat est superieur d'un nombre donné
         {
-            foreach (Article article in listArticles)
+            
+            if (listArticles.Count > 0)
             {
-                if (article.GetPrixAchat() > prix)
+                Article article = listArticles.Find(article => article.GetPrixAchat() > prix);
+                if (article != null)
                 {
                     Console.WriteLine(article.GetInfoArticle());
                 }
                 else
                 {
-                    Console.WriteLine("Aucun resultat trouvé ");
+                    Console.WriteLine("l'article recherché est introuvable");
                 }
+            }
+            else
+            {
+                Console.WriteLine("La list est vide");
             }
 
         }
@@ -96,18 +102,24 @@ namespace ConsoleApp1
 
         public void ModifierArticle(int r, string n, decimal a, decimal v)              // update les info d'un article par le passage de son reference 
         {
-            foreach (Article article in listArticles)
+           
+            if (listArticles.Count > 0)
             {
-                if (article.GetNumRef() == r)
+                Article article = listArticles.Find(article => article.GetNumRef() == r);
+                if (article != null)
                 {
-                    article.SetNom(n) ;
+                    article.SetNom(n);
                     article.SetPrixAchat(a);
                     article.SetPrixVente(v);
                 }
                 else
                 {
-                    Console.WriteLine("l'article est introuvable");
+                    Console.WriteLine("l'article recherché est introuvable");
                 }
+            }
+            else
+            {
+                Console.WriteLine("La list est vide");
             }
         }
 
